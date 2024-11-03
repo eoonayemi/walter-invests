@@ -18,6 +18,8 @@ import mongoose from "mongoose";
 import errorHandler from "./middlewares/errorHandler";
 import "./services/scheduler";
 
+const PORT = process.env.PORT || 3000;
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -60,10 +62,8 @@ app.use(errorHandler);
 // app.get("*", (req: Request, res: Response) => {
 //   res.sendFile(path.join(__dirname, "../client-dist/index.html"));
 // });
-app.get("/", (req: Request, res: Response) => {
-  res.send("API is working");
-});
+app.get("/", (req: Request, res: Response) => res.send("Express on Vercel"));
 
-app.listen(5000, () => {
-  console.log("Server is running on port localhost:5000");
+app.listen(PORT, () => {
+  console.log(`Server is running on port localhost:${PORT}`);
 });
