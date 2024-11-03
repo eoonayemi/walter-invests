@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import Investment, { InvestmentStatus } from "../models/investment";
-import verifyToken from "./../middlewares/verifyToken";
+import verifyToken from "../middlewares/verifyToken";
 import Plan, { PlanType } from "../models/plan";
 import User, { UserType } from "../models/user";
 import Transaction from "../models/transaction";
