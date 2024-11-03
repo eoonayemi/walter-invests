@@ -3,7 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
-import path from "path";
+// import path from "path";
 import userRoutes from "./routes/user";
 import userAuthRoutes from "./routes/users-auth";
 import myTransactionRoutes from "./routes/my-transactions";
@@ -41,7 +41,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "../client-dist")));
+// app.use(express.static(path.join(__dirname, "../client-dist")));
 
 app.use("/api/users", userRoutes);
 app.use("/api/users-auth", userAuthRoutes);
@@ -57,8 +57,11 @@ app.use("/api/codes", codesRoutes);
 // Error handling middleware
 app.use(errorHandler);
 
-app.get("*", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "../client-dist/index.html"));
+// app.get("*", (req: Request, res: Response) => {
+//   res.sendFile(path.join(__dirname, "../client-dist/index.html"));
+// });
+app.get("/", (req: Request, res: Response) => {
+  res.send("API is working");
 });
 
 app.listen(5000, () => {
