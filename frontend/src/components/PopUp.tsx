@@ -13,7 +13,7 @@ const PopUp = ({ TGLink }: PopUpProps) => {
   };
   return (
     <div
-      className={`flex bg-black bg-opacity-70 h-screen inset-0 justify-center items-center z-50 fixed ${
+      className={`flex bg-black bg-opacity-70 h-screen inset-0 justify-center items-center z-50 fixed left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] ${
         showPopUp ? "block" : "hidden"
       }`}
     >

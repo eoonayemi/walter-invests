@@ -17,7 +17,7 @@ function NoTabLayout({ title, subtitle, children }: Props) {
         children && subtitle ? "pt-[4.5rem]" : "pt-16"
       } flex flex-col gap-3`}
     >
-      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 right-0 left-0 text-white">
+      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] text-white">
         <span
           className="hover:bg-my-t-white rounded-full p-1"
           onClick={() => navigate(-1)}

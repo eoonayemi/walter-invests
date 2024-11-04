@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 pt-14 mb-14 sm:pb-[3rem]">
-      <div className="bg-white flex justify-between items-center px-6 py-4 fixed right-0 left-0 top-0 z-0">
+      <div className="bg-white flex justify-between items-center px-6 py-4 fixed left-0 xl:left-[30rem] right-0 xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] top-0 z-0">
         <img
           src="http://res.cloudinary.com/dc0tvk5bx/image/upload/v1718487907/xotuwlmnykfusnhfolvs.png"
           alt="logo"

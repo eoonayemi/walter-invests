@@ -14,12 +14,12 @@ export type WithdrawFormData = {
   type: string;
   amount: number;
   bankType: string;
-}
+};
 
 const Withdraw = () => {
   const navigate = useNavigate();
   const { showToast } = useAppContext();
-  const { user } = useAppSelector( state => state.user )
+  const { user } = useAppSelector((state) => state.user);
   const options = [
     { value: "", label: "Select Bank" },
     { value: "local", label: "Local Bank" },
@@ -40,7 +40,6 @@ const Withdraw = () => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [noOptionErr, setNoOptionErr] = useState<ErrType>();
 
-  
   const { mutate } = useMutation(apiClient.makeWithdrawal, {
     onSuccess: () => {
       showToast({ type: "SUCCESS", message: "Withdrawal successful" });
@@ -67,11 +66,11 @@ const Withdraw = () => {
       return setNoOptionErr("Please select a bank");
     }
 
-    if(isLoading) {
+    if (isLoading) {
       return showToast({ type: "ERROR", message: "Bank Accounts Loading..." });
     }
 
-    if(user && user?.withdrawableBalance < 1000 ) {
+    if (user && user?.withdrawableBalance < 1000) {
       return showToast({ type: "ERROR", message: "Insufficient balance" });
     }
 
@@ -85,7 +84,7 @@ const Withdraw = () => {
 
   return (
     <div className="bg-white min-h-screen pt-16 flex flex-col gap-2">
-      <div className="flex py-3 px-3 gap-1 justify-between items-center bg-my-blue fixed top-0 right-0 left-0 text-white font-semibold z-20">
+      <div className="flex py-3 px-3 gap-1 justify-between items-center bg-my-blue fixed top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] text-white font-semibold z-20">
         <span
           className="hover:bg-my-t-white rounded-full p-1"
           onClick={() => navigate(-1)}
@@ -150,34 +149,35 @@ const Withdraw = () => {
         )}
       </div>
 
-      { bankDetails && bankDetails
-        .filter(
-          (bank: apiClient.BankDetailsType) => selectedValue == bank.bankType
-        )
-        .map((bank: apiClient.BankDetailsType) => (
-          <div className="flex flex-col shadow-my-shadow mx-3 px-6 rounded-xl my-2">
-            <p className="py-3 font-semibold  text-center">Bank Details</p>
-            <hr />
-            <div className="flex flex-col my-2">
-              <div className="flex justify-between py-2">
-                <span className="font-semibold">Bank Name</span>
-                <span>{bank.bankName}</span>
-              </div>
-              <div className="flex justify-between py-2">
-                <span className="font-semibold">Account Number</span>
-                <span>{bank.accountNumber}</span>
-              </div>
-              <div className="flex justify-between py-2">
-                <span className="font-semibold">Account Name</span>
-                <span>{bank.accountName}</span>
-              </div>
-              <div className="flex justify-between py-2">
-                <span className="font-semibold">Bank Type</span>
-                <span>{bank.bankType}</span>
+      {bankDetails &&
+        bankDetails
+          .filter(
+            (bank: apiClient.BankDetailsType) => selectedValue == bank.bankType
+          )
+          .map((bank: apiClient.BankDetailsType) => (
+            <div className="flex flex-col shadow-my-shadow mx-3 px-6 rounded-xl my-2">
+              <p className="py-3 font-semibold  text-center">Bank Details</p>
+              <hr />
+              <div className="flex flex-col my-2">
+                <div className="flex justify-between py-2">
+                  <span className="font-semibold">Bank Name</span>
+                  <span>{bank.bankName}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="font-semibold">Account Number</span>
+                  <span>{bank.accountNumber}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="font-semibold">Account Name</span>
+                  <span>{bank.accountName}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="font-semibold">Bank Type</span>
+                  <span>{bank.bankType}</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <label className="font-semibold mx-3 text-sm">Withdrawal Amount</label>
@@ -218,7 +218,9 @@ const Withdraw = () => {
         </div>
         <div className="flex gap-2 p-4">
           <IconContext.Provider
-            value={{ className: "font-semibold text-lg text-my-blue self-start" }}
+            value={{
+              className: "font-semibold text-lg text-my-blue self-start",
+            }}
           >
             <IoCheckmarkDoneCircle />
           </IconContext.Provider>
@@ -226,7 +228,9 @@ const Withdraw = () => {
         </div>
         <div className="flex gap-2 p-4">
           <IconContext.Provider
-            value={{ className: "font-semibold text-2xl text-my-blue self-start" }}
+            value={{
+              className: "font-semibold text-2xl text-my-blue self-start",
+            }}
           >
             <IoCheckmarkDoneCircle />
           </IconContext.Provider>

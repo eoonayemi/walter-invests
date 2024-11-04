@@ -51,9 +51,8 @@ const TabBar = () => {
     (menu) => menu.path === location.pathname
   );
 
- 
   return (
-    <div className="bg-white fixed -bottom-1 right-0 left-0 py-5 px-8 z-25 rounded-xl">
+    <div className="bg-white fixed -bottom-1 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] py-5 px-8 z-25 rounded-xl">
       <ul className="flex justify-between items-center relative">
         {menus.map((menu, i) => (
           <li key={i}>
@@ -70,7 +69,9 @@ const TabBar = () => {
               >
                 <IconContext.Provider
                   value={{
-                    className: `${activeIndex == i ? "text-white" : "text-gray-500"} text-xl `,
+                    className: `${
+                      activeIndex == i ? "text-white" : "text-gray-500"
+                    } text-xl `,
                   }}
                 >
                   {menu.icon(activeIndex == i)}

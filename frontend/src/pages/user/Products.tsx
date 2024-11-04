@@ -65,7 +65,7 @@ const Products = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen pt-[4.5rem] pb-32 flex flex-col gap-3">
-      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 right-0 left-0 text-white font-semibold">
+      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] text-white font-semibold">
         <span
           className="hover:bg-my-t-white rounded-full p-1"
           onClick={() => navigate(-1)}
@@ -90,13 +90,15 @@ const Products = () => {
             <span className="flex flex-col gap-1">
               <span className="font-semibold text-base">{product.name}</span>
               <span className="flex flex-col text-gray-400">
-                <span>{`Daily Income: N${
-                  addCommas(product.returnType === "percent"
+                <span>{`Daily Income: N${addCommas(
+                  product.returnType === "percent"
                     ? (product.dailyReturn * product.price) / 100
-                    : product.dailyReturn)
-                }`}</span>
+                    : product.dailyReturn
+                )}`}</span>
                 <span>{`Earning Days: ${product.totalDays}days`}</span>
-                <span>{`Total Income: N${addCommas(product.totalReturn)}`}</span>
+                <span>{`Total Income: N${addCommas(
+                  product.totalReturn
+                )}`}</span>
               </span>
             </span>
             <span className="border capitalize border-green-500 text-green-500 self-start rounded-full px-2 py-1">

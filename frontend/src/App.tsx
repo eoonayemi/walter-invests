@@ -39,90 +39,102 @@ import Transactions from "./pages/admin/Transactions";
 import UserDetails from "./pages/admin/UserDetails";
 import AdminProfile from "./pages/admin/AdminProfile";
 import MyCompletedOrders from "./pages/user/MyCompletedOrders";
+import LayoutForWideScreen from "./layouts/LayoutForWideScreen";
 
 function App() {
   const { isLoggedIn, isAdmin: admin } = useAppContext();
 
   return (
-    <div className="select-none">
+    <div className="select-none sm:bg-blue-950">
       <BrowserRouter>
         <Routes>
           {/* User Routes */}
 
-          <Route path="/login" element={<LogInPage />} />
+          <Route element={<LayoutForWideScreen />}>
+            <Route path="/login" element={<LogInPage />} />
 
-          <Route path="/register" element={<RegisterPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
-          {isLoggedIn && (
-            <Route path="/dashboard" element={<DashboardPage />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/dashboard" element={<DashboardPage />} />
+            )}
 
-          {isLoggedIn && <Route path="/products" element={<ProductsPage />} />}
+            {isLoggedIn && (
+              <Route path="/products" element={<ProductsPage />} />
+            )}
 
-          {isLoggedIn && <Route path="/wallet" element={<WalletPage />} />}
+            {isLoggedIn && <Route path="/wallet" element={<WalletPage />} />}
 
-          {isLoggedIn && <Route path="/team" element={<TeamPage />} />}
+            {isLoggedIn && <Route path="/team" element={<TeamPage />} />}
 
-          {isLoggedIn && <Route path="/user/add-bank" element={<AddBank />} />}
+            {isLoggedIn && (
+              <Route path="/user/add-bank" element={<AddBank />} />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/change-password" element={<ChangePassword />} />
-          )}
+            {isLoggedIn && (
+              <Route
+                path="/user/change-password"
+                element={<ChangePassword />}
+              />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/bank-details" element={<BankDetails />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/user/bank-details" element={<BankDetails />} />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/deposit/records" element={<DepositRecords />} />
-          )}
+            {isLoggedIn && (
+              <Route
+                path="/user/deposit/records"
+                element={<DepositRecords />}
+              />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/income/records" element={<IncomeRecords />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/user/income/records" element={<IncomeRecords />} />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/deposit" element={<MakeDeposit />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/user/deposit" element={<MakeDeposit />} />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/investments" element={<MyRunningOrders />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/user/investments" element={<MyRunningOrders />} />
+            )}
 
-          {isLoggedIn && (
-            <Route
-              path="/user/investments/ended"
-              element={<MyCompletedOrders />}
-            />
-          )}
+            {isLoggedIn && (
+              <Route
+                path="/user/investments/ended"
+                element={<MyCompletedOrders />}
+              />
+            )}
 
-          {isLoggedIn && (
-            <Route
-              path="/user/transaction/records"
-              element={<TransactionRecords />}
-            />
-          )}
+            {isLoggedIn && (
+              <Route
+                path="/user/transaction/records"
+                element={<TransactionRecords />}
+              />
+            )}
 
-          {isLoggedIn && (
-            <Route path="/user/withdraw" element={<Withdrawal />} />
-          )}
+            {isLoggedIn && (
+              <Route path="/user/withdraw" element={<Withdrawal />} />
+            )}
 
-          {isLoggedIn && (
-            <Route
-              path="/user/withdraw/records"
-              element={<WithdrawalRecords />}
-            />
-          )}
+            {isLoggedIn && (
+              <Route
+                path="/user/withdraw/records"
+                element={<WithdrawalRecords />}
+              />
+            )}
 
-          {isLoggedIn && <Route path="/user/profile" element={<MyPage />} />}
+            {isLoggedIn && <Route path="/user/profile" element={<MyPage />} />}
 
-          {isLoggedIn && (
-            <Route
-              path="/user/deposit/deposit-details"
-              element={<DepositDetails />}
-            />
-          )}
-
+            {isLoggedIn && (
+              <Route
+                path="/user/deposit/deposit-details"
+                element={<DepositDetails />}
+              />
+            )}
+          </Route>
           {/* Admin Routes */}
 
           <Route path="/admin/login" element={<AdminLogin />} />

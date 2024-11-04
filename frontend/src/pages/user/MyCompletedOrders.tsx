@@ -90,7 +90,7 @@ const MyOrders = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen pt-[4.5rem] pb-4 flex flex-col gap-3">
-      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 right-0 left-0 text-white font-semibold">
+      <div className="flex py-3 px-3 gap-1 items-center bg-my-blue fixed top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] text-white font-semibold">
         <span
           className="hover:bg-my-t-white rounded-full p-1"
           onClick={() => navigate(-1)}
@@ -141,7 +141,9 @@ const MyOrders = () => {
                 {investment.planName}
               </span>
               <span className="flex flex-col text-gray-400">
-                <span>{`Daily Income: N${addCommas(investment.dailyReturn)}`}</span>
+                <span>{`Daily Income: N${addCommas(
+                  investment.dailyReturn
+                )}`}</span>
                 <span>{`Order Price: N${addCommas(investment.capital)}`}</span>
                 {/* <span>{`Earning Days: ${investment.totalDays} days`}</span>
                 <span>{`Total Income: N${investment.totalReturn}`}</span>
@@ -155,10 +157,10 @@ const MyOrders = () => {
                   new Date(investment.createdAt),
                   investment.totalDays
                 )()}`}</span> */}
-                <span>{`Amount Earned: N${addCommas(investment.amountEarned)}`}</span>
-                <span>{`Next Earn: ${getNextDay(
-                  investment.updatedAt
+                <span>{`Amount Earned: N${addCommas(
+                  investment.amountEarned
                 )}`}</span>
+                <span>{`Next Earn: ${getNextDay(investment.updatedAt)}`}</span>
               </span>
             </span>
             <span

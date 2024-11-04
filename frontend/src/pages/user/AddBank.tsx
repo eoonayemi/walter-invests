@@ -67,7 +67,7 @@ const AddBank = () => {
 
   return (
     <div>
-      <div className="fixed top-0 left-0 right-0 text-center bg-my-blue text-white py-4 font-semibold text-lg text-pretty z-100">
+      <div className="fixed top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] text-center bg-my-blue text-white py-4 font-semibold text-lg text-pretty z-100">
         <div className="flex items-center gap-2 mx-5">
           <div onClick={() => navigate(-1)}>
             <IconContext.Provider value={{ className: "text-3xl font-bold" }}>

@@ -91,7 +91,7 @@ const Me = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col gap-2 pb-32">
-      <div className="fixed py-4 px-4 top-0 right-0 left-0 bg-my-blue text-white flex justify-between items-center">
+      <div className="fixed py-4 px-4 top-0 left-0 xl:left-[30rem] right-0  xl:right-[30rem] lg:left-[25rem] lg:right-[25rem] md:left-[15rem] md:right-[15rem] bg-my-blue text-white flex justify-between items-center">
         <div className="flex gap-3">
           <FaUserCircle className="w-12 h-12 rounded-full" />
           <div className="flex flex-col">
