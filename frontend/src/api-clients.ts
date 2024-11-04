@@ -9,7 +9,7 @@ import { WithdrawFormData } from "./pages/user/Withdrawal";
 import { AdminProfileType } from "./pages/admin/AdminProfile";
 import { AdminLoginFormData } from "./pages/admin/AdminLogin";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE_URL = "";
 
 export type BankDetailsType = {
   bankName: string;
