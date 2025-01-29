@@ -72,6 +72,12 @@ const AdminLogin = () => {
           <span className="text-sm text-gray-400">
             Admin login to dashboard
           </span>
+
+          <span className="mx-auto text-sm">
+            Admin Login Details
+          Email: super@mygmail.com
+          Password: super123
+          </span>
         </div>
         <form
           onSubmit={onSubmit}
