@@ -410,7 +410,7 @@ const ManagePlanForm = ({
                 <IconContext.Provider
                   value={{ className: "font-bold text-sm " }}
                 >
-                  <LuUploadCloud />
+                  <IoCloudDone />
                 </IconContext.Provider>
                 <span>Upload Image</span>
 
