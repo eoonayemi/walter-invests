@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 import { IoIosArrowForward } from "react-icons/io";
 import { UseMutateFunction } from "react-query";
 import { useAppContext } from "../contexts/AppContext";
-import { LuUploadCloud } from "react-icons/lu";
+import { IoCloudDone } from "react-icons/io5";
 
 export type PlanFormData = {
   name: string | null;
