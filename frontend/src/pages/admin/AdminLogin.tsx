@@ -73,10 +73,10 @@ const AdminLogin = () => {
             Admin login to dashboard
           </span>
 
-          <span className="mx-auto text-sm">
-            Admin Login Details
-          Email: super@mygmail.com
-          Password: super123
+          <span className="mx-auto text-sm flex flex-column justify-center items-center">
+            <span>Admin Login Details</span>
+          <span>Email: super@mygmail.com</span>
+          <span>Password: super123</span>
           </span>
         </div>
         <form
